@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>More Shambler Xenotypes</name>
+	<author>DanZinagri</author>
+	<packageId>DanZinagri.MoreShamblerXenotypes</packageId>
+	<supportedVersions>
+		<li>1.6</li>
+		<li>1.7</li>
+	</supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>Ludeon.RimWorld.Anomaly</packageId>
+			<displayName>Anomaly</displayName>
+		</li>
+		<li>
+			<packageId>Ludeon.RimWorld.Biotech</packageId>
+			<displayName>Biotech</displayName>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Wara.toomanymods</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>sarg.alphagenes</li>
+		<li>dorbo.shamblervariants</li>
+	</loadAfter>
+	<description>Shamblers (and, with Cybranian - Anomaly Ghosts, ghosts) rise as a spread of vanilla and modded xenotypes instead of only baseliners. Originally part of Too Many Mods - Compats and Rebalances.</description>
+</ModMetaData>

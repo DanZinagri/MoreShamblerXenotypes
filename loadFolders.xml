@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<loadFolders>
+	<v1.6>
+		<li>/</li>
+		<!-- Listed before 1.6 on purpose: the last-listed folder is patched first, so this one runs after 1.6. -->
+		<li IfModActiveAll="Ludeon.RimWorld.Anomaly,Ludeon.RimWorld.Biotech,dorbo.shamblervariants">1.6/Mods/ShamblerVariants</li>
+		<li IfModActiveAll="Ludeon.RimWorld.Anomaly,Ludeon.RimWorld.Biotech">1.6</li>
+	</v1.6>
+	<v1.7>
+		<li>/</li>
+		<!-- Listed before 1.7 on purpose: the last-listed folder is patched first, so this one runs after 1.7. -->
+		<li IfModActiveAll="Ludeon.RimWorld.Anomaly,Ludeon.RimWorld.Biotech,dorbo.shamblervariants">1.7/Mods/ShamblerVariants</li>
+		<li IfModActiveAll="Ludeon.RimWorld.Anomaly,Ludeon.RimWorld.Biotech">1.7</li>
+	</v1.7>
+</loadFolders>

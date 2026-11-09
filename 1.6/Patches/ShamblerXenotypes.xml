@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!--
+		Shamblers rise as a spread of xenotypes instead of only baseliners: vanilla Biotech xenotypes plus those of Big and Small,
+		Alpha Genes, Det's, Rimsenal, VRE, Geist, Rim-Elves / Rim-Gnoblins, Merren and Biotech Expansion, each entry
+		MayRequire'd on its mod. With Alpha Genes a few rarer ones join. With Cybranian - Anomaly Ghosts, its ghosts get a
+		xenotype spread too (not installed here and its packageId is unknown, so that block keeps its mod-name check).
+		Moved from Too Many Mods' core AA3B_ShamblerXenotype.xml (setting TMM_MoreShamblerXenotypes, default on); spaces
+		after commas in a few MayRequire lists removed. The Alpha Genes block adds B&S / Biotech Expansion / Lamias xenotypes
+		but is gated on Alpha Genes, as in the original.
+		Removed 2026-10-13 (user): Big and Small's corrupted titan no longer rises as a shambler.
+		Lowered 2026-11-08 (user): large races ten times rarer - Jotun line, Ogres, Lesser Oni, Abomination, Broodmother,
+		Hive Queen, Tiamat, Nagaraj, Anacondaman 0.005 to 0.0005; Troll, Weaver, Devilspider, Glutton 0.02 to 0.002. Chances are
+		absolute, so the difference goes to baseliners.
+		Added 2026-11-08 (user): xenotypes from DanZinagri's Centaurs, Spider Xenotypes, Harpies, Catfolk, Lepthera and Muriden,
+		sized the same way (large 0.0005, taur bodies 0.002, rarer variants 0.005, the rest 0.01).
+		Checked with analysis/patch_sim.py: all apply against the installed mods; every xenotype name either exists or belongs
+		to a mod that is not installed (Biotech Expansion, Det's Buzzers, Rim-Gnoblins, Merren).
+	-->
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[@Name="ShamblerBase"]</xpath>
+				<value>
+					<xenotypeSet Inherit="False">
+						<xenotypeChances>
+							<Blastheart MayRequire="biotexpans.mammalia">0.001</Blastheart>
+							<Seertusk MayRequire="biotexpans.mammalia">0.005</Seertusk>
+							<Cloudpuff MayRequire="biotexpans.mammalia">0.005</Cloudpuff>
+							<BS_Jotun MayRequire="RedMattis.BigSmall">0.0005</BS_Jotun>
+							<BS_LesserOni MayRequire="RedMattis.Yokai">0.0005</BS_LesserOni>
+							<BS_Half_Jotun MayRequire="RedMattis.BigSmall">0.0005</BS_Half_Jotun>
+							<BS_Abomination MayRequire="RedMattis.MoreXenos">0.0005</BS_Abomination>
+							<LoS_Adderman MayRequire="RedMattis.LamiasAndOtherSnakes">0.005</LoS_Adderman>
+							<LoS_Anacondaman MayRequire="RedMattis.LamiasAndOtherSnakes">0.0005</LoS_Anacondaman>
+							<LoS_Snakeman MayRequire="RedMattis.LamiasAndOtherSnakes">0.005</LoS_Snakeman>
+							<Naga MayRequire="RedMattis.LamiasAndOtherSnakes">0.005</Naga>
+							<Nagaraj MayRequire="RedMattis.LamiasAndOtherSnakes">0.0005</Nagaraj>
+							<BS_FrostJotun MayRequire="RedMattis.BigSmall">0.0005</BS_FrostJotun>
+							<BS_FireJotun MayRequire="RedMattis.BigSmall">0.0005</BS_FireJotun>
+							<BS_Surtr MayRequire="RedMattis.BigSmall">0.0005</BS_Surtr>
+							<BS_Ymir MayRequire="RedMattis.BigSmall">0.0005</BS_Ymir>
+							<BS_Kitsune MayRequire="RedMattis.Yokai">0.005</BS_Kitsune>
+							<BS_Nekomata MayRequire="RedMattis.Yokai">0.005</BS_Nekomata>
+							<BS_Ogre MayRequire="RedMattis.BigSmall">0.0005</BS_Ogre>
+							<BS_GreatOgre MayRequire="RedMattis.BigSmall">0.0005</BS_GreatOgre>
+							<BS_Broodmother MayRequire="RedMattis.MoreXenos">0.0005</BS_Broodmother>
+							<Genie>0.01</Genie>
+							<Starjack MayRequire="Ludeon.RimWorld.Odyssey">0.01</Starjack>
+							<Pigskin>0.01</Pigskin>
+							<DV_Avaloi MayRequire="det.avaloi">0.01</DV_Avaloi>
+							<DV_Brawnum MayRequire="det.brawnum">0.01</DV_Brawnum>
+							<Stoneborn MayRequire="det.stoneborn">0.01</Stoneborn>
+							<VRE_Lowmate MayRequire="vanillaracesexpanded.highmate">0.01</VRE_Lowmate>
+							<Haytankard MayRequire="biotexpans.mammalia">0.01</Haytankard>
+							<Hindhopper MayRequire="biotexpans.mammalia">0.01</Hindhopper>
+							<BS_LilGlutton MayRequire="RedMattis.Heaven">0.01</BS_LilGlutton>
+							<VRESaurids_Saurid MayRequire="vanillaracesexpanded.saurid">0.01</VRESaurids_Saurid>
+							<Gnoblin MayRequire="VexedTrees980.RimGnoblinsBiotech">0.01</Gnoblin>
+							<RE_Elve MayRequire="VexedTrees980.RimElvesBiotech">0.01</RE_Elve>
+							<AG_Fleetkind MayRequire="sarg.alphagenes">0.01</AG_Fleetkind>
+							<AG_Animusen MayRequire="sarg.alphagenes">0.01</AG_Animusen>
+							<AG_Nereid MayRequire="sarg.alphagenes">0.01</AG_Nereid>
+							<AG_Drakonori MayRequire="sarg.alphagenes">0.01</AG_Drakonori>
+							<Barkkin MayRequire="biotexpans.mammalia">0.01</Barkkin>
+							<Bonecrown MayRequire="biotexpans.mammalia">0.01</Bonecrown>
+							<Wiretail MayRequire="biotexpans.mammalia">0.01</Wiretail>
+							<Hidewing MayRequire="biotexpans.mammalia">0.01</Hidewing>
+							<DV_Venator MayRequire="det.venators">0.01</DV_Venator>
+							<DV_Keshig MayRequire="det.keshig">0.01</DV_Keshig>
+							<DV_Halffoot MayRequire="det.halffoot">0.01</DV_Halffoot>
+							<DV_Buzzer MayRequire="det.buzzers">0.01</DV_Buzzer>
+							<Stagz_Merfolk_Coastal MayRequire="Arquebus.StagzMerfolk">0.01</Stagz_Merfolk_Coastal>
+							<Stagz_Merfolk_Abyssal MayRequire="Arquebus.StagzMerfolk">0.01</Stagz_Merfolk_Abyssal>
+							<Waster>0.02</Waster>
+							<Neanderthal>0.02</Neanderthal>
+							<Impid>0.02</Impid>
+							<Yttakin>0.02</Yttakin>
+							<Askbarn MayRequire="Rimsenal.Askbarn">0.02</Askbarn>
+							<Zohar MayRequire="Rimsenal.Zohar">0.02</Zohar>
+							<GS_Geist MayRequire="Sov.Tenmo">0.02</GS_Geist>
+							<BS_Troll MayRequire="RedMattis.BigSmall">0.002</BS_Troll>
+							<BS_Weaver MayRequire="RedMattis.MoreXenos">0.002</BS_Weaver>
+							<BS_Devilspider MayRequire="RedMattis.MoreXenos">0.002</BS_Devilspider>
+							<BS_Glutton MayRequire="RedMattis.Heaven">0.002</BS_Glutton>
+							<VREH_Uhlan MayRequire="vanillaracesexpanded.hussar">0.02</VREH_Uhlan>
+							<VRE_Boarskin MayRequire="vanillaracesexpanded.pigskin">0.02</VRE_Boarskin>
+							<AG_Hiveling MayRequire="sarg.alphagenes">0.02</AG_Hiveling>
+							<AG_Efreet MayRequire="sarg.alphagenes">0.02</AG_Efreet>
+							<VRE_Insector MayRequire="vanillaracesexpanded.insector">0.02</VRE_Insector>
+							<Dirtmole>0.04</Dirtmole>
+							<Hussar>0.04</Hussar>
+							<Harana MayRequire="Rimsenal.Harana">0.04</Harana>
+							<Uredd MayRequire="Rimsenal.Askbarn">0.04</Uredd>
+							<!-- DanZinagri's race mods (added 2026-11-08) -->
+							<!-- Large: thrumbo and direhorse centaurs, Arakron, titan and large Muriden frames -->
+							<DZ_Thrumboran MayRequire="DZ.BSCentaursExpanded">0.0005</DZ_Thrumboran>
+							<DZ_DireCentaur MayRequire="DZ.BSCentaursExpanded,veterano.mythicages.megafaunabestiary">0.0005</DZ_DireCentaur>
+							<DZ_WoolyCentaur MayRequire="DZ.BSCentaursExpanded,veterano.mythicages.megafaunabestiary">0.0005</DZ_WoolyCentaur>
+							<Arakron MayRequire="DanZinagri.SpiderXenotypesBS">0.0005</Arakron>
+							<Artigasen MayRequire="DanZinagri.Muriden">0.0005</Artigasen>
+							<Castoroid MayRequire="DanZinagri.Muriden">0.0005</Castoroid>
+							<!-- Taur bodies, same tier as B&S Troll / Weaver -->
+							<DZ_Centaur MayRequire="DZ.BSCentaursExpanded">0.002</DZ_Centaur>
+							<DZ_Racing_Centaur MayRequire="DZ.BSCentaursExpanded">0.002</DZ_Racing_Centaur>
+							<DZ_Unicorn_Centaur MayRequire="DZ.BSCentaursExpanded">0.002</DZ_Unicorn_Centaur>
+							<DZ_Nightmare_Centaur MayRequire="DZ.BSCentaursExpanded">0.002</DZ_Nightmare_Centaur>
+							<DZ_DairyCentaur MayRequire="DZ.BSCentaursExpanded,Euterpe.MilkyTitfuck">0.002</DZ_DairyCentaur>
+							<WolfSpider MayRequire="DanZinagri.SpiderXenotypesBS">0.002</WolfSpider>
+							<SilkWeaver MayRequire="DanZinagri.SpiderXenotypesBS,DankPyon.Medieval.Overhaul">0.002</SilkWeaver>
+							<TyrianWeaver MayRequire="DanZinagri.SpiderXenotypesBS,OskarPotocki.VFE.Classical">0.002</TyrianWeaver>
+							<Nurserachne MayRequire="DanZinagri.SpiderXenotypesBS,Euterpe.MilkyTitfuck">0.002</Nurserachne>
+							<Hemox MayRequire="DanZinagri.SpiderXenotypesBS,vanillaracesexpanded.sanguophage">0.002</Hemox>
+							<!-- Rarer variants -->
+							<DZ_VermillionHarpy MayRequire="DZ.BSHarpies">0.005</DZ_VermillionHarpy>
+							<DZ_BloodHarpy MayRequire="DZ.BSHarpies">0.005</DZ_BloodHarpy>
+							<DZ_WereCat MayRequire="DanZinagri.BigSmall.Catfolk">0.005</DZ_WereCat>
+							<DZ_Panthera MayRequire="DanZinagri.BigSmall.Catfolk">0.005</DZ_Panthera>
+							<DZ_CaitSith MayRequire="DanZinagri.BigSmall.Catfolk,RedMattis.BigSmall.Core">0.005</DZ_CaitSith>
+							<Choerites MayRequire="DanZinagri.Muriden">0.005</Choerites>
+							<Kopidan MayRequire="DanZinagri.Muriden">0.005</Kopidan>
+							<Lepthera_Aurelith MayRequire="DanZinagri.BigSmall.Lepthera">0.005</Lepthera_Aurelith>
+							<Lepthera_Mycoth MayRequire="DanZinagri.BigSmall.Lepthera,sarg.alphagenes">0.005</Lepthera_Mycoth>
+							<Lepthera_Noctyra MayRequire="DanZinagri.BigSmall.Lepthera">0.005</Lepthera_Noctyra>
+							<Lepthera_Lunaveth MayRequire="DanZinagri.BigSmall.Lepthera,RedMattis.BigSmall.Core">0.005</Lepthera_Lunaveth>
+							<Lepthera_Cindrathi MayRequire="DanZinagri.BigSmall.Lepthera">0.005</Lepthera_Cindrathi>
+							<!-- Normal -->
+							<DZ_GarudakinHarpy MayRequire="DZ.BSHarpies">0.01</DZ_GarudakinHarpy>
+							<DZ_LandHarpy MayRequire="DZ.BSHarpies">0.01</DZ_LandHarpy>
+							<DZ_RaptorHarpy MayRequire="DZ.BSHarpies">0.01</DZ_RaptorHarpy>
+							<DZ_PoultryHarpy MayRequire="DZ.BSHarpies">0.01</DZ_PoultryHarpy>
+							<Muriden MayRequire="DanZinagri.Muriden">0.01</Muriden>
+							<Sciurus MayRequire="DanZinagri.Muriden">0.01</Sciurus>
+							<Castoran MayRequire="DanZinagri.Muriden">0.01</Castoran>
+							<FeralMuriden MayRequire="DanZinagri.Muriden">0.01</FeralMuriden>
+							<DZ_Catfolk MayRequire="DanZinagri.BigSmall.Catfolk">0.01</DZ_Catfolk>
+							<Baseliner>0.08</Baseliner>
+						</xenotypeChances>
+					</xenotypeSet>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationSequence" MayRequire="sarg.alphagenes">
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/PawnKindDef[@Name="ShamblerBase"]/xenotypeSet/xenotypeChances</xpath>
+						<value>
+							<Devilpuff MayRequire="biotexpans.mammalia">0.001</Devilpuff>
+							<LoS_ScenarioTiamat MayRequire="RedMattis.LamiasAndOtherSnakes">0.0005</LoS_ScenarioTiamat>
+							<BS_HiveQueen MayRequire="RedMattis.MoreXenos">0.0005</BS_HiveQueen>
+						</value>
+					</li>
+				</operations>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Cybranian - Anomaly Ghosts</li>
+				</mods>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/PawnKindDef[defName="Ghost"]</xpath>
+							<value>
+								<xenotypeSet Inherit="False">
+									<xenotypeChances>
+										<!-- dull -->
+										<Yttakin>0.01</Yttakin>
+										<Uredd MayRequire="Rimsenal.Askbarn">0.01</Uredd>
+										<!-- normal -->
+										<Baseliner>0.20</Baseliner>
+										<Starjack MayRequire="Ludeon.RimWorld.Odyssey">0.02</Starjack>
+										<Genie>0.02</Genie>
+										<Dirtmole>0.02</Dirtmole>
+										<Waster>0.02</Waster>
+										<Neanderthal>0.02</Neanderthal>
+										<VRESaurids_Saurid MayRequire="vanillaracesexpanded.saurid">0.01</VRESaurids_Saurid>
+										<VRE_Lowmate MayRequire="vanillaracesexpanded.highmate">0.01</VRE_Lowmate>
+										<Askbarn MayRequire="Rimsenal.Askbarn">0.02</Askbarn>
+										<Harana MayRequire="Rimsenal.Harana">0.02</Harana>
+										<AG_Forsaken MayRequire="sarg.alphagenes">0.02</AG_Forsaken>
+										<DV_Halffoot MayRequire="det.halffoot">0.02</DV_Halffoot>
+										<DV_Brawnum MayRequire="det.brawnum">0.02</DV_Brawnum>
+										<Barkkin MayRequire="biotexpans.mammalia">0.01</Barkkin>
+										<Bonecrown MayRequire="biotexpans.mammalia">0.01</Bonecrown>
+										<Wiretail MayRequire="biotexpans.mammalia">0.01</Wiretail>
+										<Hidewing MayRequire="biotexpans.mammalia">0.01</Hidewing>
+										<Haytankard MayRequire="biotexpans.mammalia">0.01</Haytankard>
+										<Hindhopper MayRequire="biotexpans.mammalia">0.01</Hindhopper>
+										<Cloudpuff MayRequire="biotexpans.mammalia">0.01</Cloudpuff>
+										<Pigskin>0.01</Pigskin>
+										<BS_RedOni MayRequire="RedMattis.Yokai">0.01</BS_RedOni>
+										<GS_Nephilim MayRequire="Sov.Nephilim">0.02</GS_Nephilim>
+										<HBX_Highborn MayRequire="ElSov.Highborn">0.02</HBX_Highborn>
+										<GS_Geist MayRequire="Sov.Tenmo">0.02</GS_Geist>
+										<!-- sensitive -->
+										<Sanguophage>0.03</Sanguophage>
+										<VRE_Strigoi MayRequire="vanillaracesexpanded.sanguophage">0.01</VRE_Strigoi>
+										<VRE_Ekkimian MayRequire="vanillaracesexpanded.sanguophage">0.02</VRE_Ekkimian>
+										<DV_Avaloi MayRequire="det.avaloi">0.03</DV_Avaloi>
+										<BS_Nekomata MayRequire="RedMattis.Yokai">0.03</BS_Nekomata>
+										<RE_Elve MayRequire="VexedTrees980.RimElvesBiotech">0.03</RE_Elve>
+										<Tailbinder MayRequire="biotexpans.mammalia,biotexpans.mythic,Ludeon.RimWorld.Royalty">0.02</Tailbinder>
+										<!-- hypersensitive -->
+										<VRE_Bruxa MayRequire="vanillaracesexpanded.sanguophage">0.01</VRE_Bruxa>
+										<VRE_Poluxkin MayRequire="vanillaracesexpanded.phytokin">0.01</VRE_Poluxkin>
+										<VRE_Gauranlenkin MayRequire="vanillaracesexpanded.phytokin,Ludeon.RimWorld.Ideology">0.01</VRE_Gauranlenkin>
+										<VRE_Animakin MayRequire="vanillaracesexpanded.phytokin,Ludeon.RimWorld.Royalty">0.01</VRE_Animakin>
+										<VRE_Ocularkin MayRequire="vanillaracesexpanded.phytokin,sarg.alphagenes">0.01</VRE_Ocularkin>
+										<Seertusk MayRequire="biotexpans.mammalia">0.02</Seertusk>
+										<!-- more than hypersensitive -->
+										<AG_Animusen MayRequire="sarg.alphagenes">0.04</AG_Animusen>
+										<BS_BlueOni MayRequire="RedMattis.Yokai">0.04</BS_BlueOni>
+									</xenotypeChances>
+								</xenotypeSet>
+							</value>
+						</li>
+					</operations>
+				</match>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>

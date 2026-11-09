@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!--
+		With Shambler Variants (dorbo.shamblervariants): ordinary shamblers no longer rise as the xenotypes that mod uses.
+		That mod turns each of them into a special variant (Dirtmole burrowers, Genie and Highmate cantors, Impid bursters,
+		Neanderthal and Hussar thrashers, Sanguophage latchers, Starjack gloams, Waster and Yttakin tanglers, Pigskin
+		pallbearers), so a plain shambler of the same xenotype would blur the theme. The same goes for the modded xenotypes it
+		uses and this mod also lists: Stoneborn (burrower), Avaloi (cantor), Brawnum, Saurid and Keshig (thrasher), Geist,
+		Venator and Half-foot (gloam), Insector and Buzzer (tangler). Baseliner stays; the removed weight (0.31) falls back
+		to baseliners.
+		This folder loads only when Shambler Variants is active, and is listed before 1.6 in loadFolders.xml so it runs
+		after the patch that creates the list (RimWorld applies the last-listed folder first).
+		Ghosts (Cybranian - Anomaly Ghosts) are not touched.
+	-->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/PawnKindDef[@Name="ShamblerBase"]/xenotypeSet/xenotypeChances/*[self::Dirtmole or self::Genie or self::Impid or self::Neanderthal or self::Hussar or self::Starjack or self::Waster or self::Yttakin or self::Pigskin or self::Stoneborn or self::DV_Avaloi or self::DV_Brawnum or self::VRESaurids_Saurid or self::DV_Keshig or self::GS_Geist or self::DV_Venator or self::DV_Halffoot or self::VRE_Insector or self::DV_Buzzer]</xpath>
+	</Operation>
+
+</Patch>
